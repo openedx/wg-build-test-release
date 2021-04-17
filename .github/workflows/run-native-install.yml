@@ -1,0 +1,50 @@
+name: Test Native Installation
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 9 * * *"
+
+jobs:
+  native_install:
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        release: ["lilac"]
+    env:
+      OPENEDX_RELEASE: open-release/${{ matrix.release }}.master
+
+    steps:
+      - name: Remove MySQL
+        run: |
+          sudo service mysql stop
+          sudo apt-get remove --purge mysql-server mysql-client mysql-common -y
+          sudo apt-get autoremove
+          sudo apt-get autoclean
+          sudo rm -rf /var/lib/mysql
+      - name: Remove MongoDB
+        run: |
+          sudo service mongod stop
+          sudo apt-get purge mongodb-org*
+          sudo rm -r /var/log/mongodb
+          sudo rm -r /var/lib/mongodb
+      - name: Ansible Bootstrap
+        run: wget https://raw.githubusercontent.com/edx/configuration/$OPENEDX_RELEASE/util/install/ansible-bootstrap.sh -O - | sudo -E bash
+      - name: Generate passwords
+        run: |
+          wget https://raw.githubusercontent.com/edx/configuration/$OPENEDX_RELEASE/util/install/generate-passwords.sh -O - | bash
+          ls -l
+      - name: Create config.yml
+        run: |
+          echo -e "EDXAPP_LMS_BASE: '$(curl ipinfo.io/ip)'\nEDXAPP_CMS_BASE: '$(curl ipinfo.io/ip):18010'\nSANDBOX_ENABLE_DISCOVERY: false" > config.yml
+          ls -l
+      - name: Native Install
+        run: wget https://raw.githubusercontent.com/edx/configuration/$OPENEDX_RELEASE/util/install/native.sh -O - | bash
+      - uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          fields: job,took
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          MATRIX_CONTEXT: ${{ toJson(matrix) }}
+        if: always()

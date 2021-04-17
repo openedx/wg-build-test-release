@@ -1,3 +1,6 @@
+|Native Installation|
+    .. |Native Installation| image:: https://github.com/openedx/build-test-release-wg/actions/workflows/run-native-install.yml/badge.svg
+       
 ################################
 Build/Test/Release Working Group
 ################################
