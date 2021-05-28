@@ -28,23 +28,37 @@ jobs:
           sudo apt-get purge mongodb-org*
           sudo rm -r /var/log/mongodb
           sudo rm -r /var/lib/mongodb
-      - name: Ansible Bootstrap
-        run: wget https://raw.githubusercontent.com/edx/configuration/$OPENEDX_RELEASE/util/install/ansible-bootstrap.sh -O - | sudo -E bash
-      - name: Generate passwords
-        run: |
-          wget https://raw.githubusercontent.com/edx/configuration/$OPENEDX_RELEASE/util/install/generate-passwords.sh -O - | bash
-          ls -l
-      - name: Create config.yml
-        run: |
-          echo -e "EDXAPP_LMS_BASE: '$(curl ipinfo.io/ip)'\nEDXAPP_CMS_BASE: '$(curl ipinfo.io/ip):18010'\nSANDBOX_ENABLE_DISCOVERY: false" > config.yml
-          ls -l
-      - name: Native Install
-        run: wget https://raw.githubusercontent.com/edx/configuration/$OPENEDX_RELEASE/util/install/native.sh -O - | bash
-      - uses: 8398a7/action-slack@v3
+      - name: Disk Space
+        run: df -h
+      - name: Send custom JSON data to Slack workflow
+        id: slack
+        uses: slackapi/slack-github-action@v1.14.0
         with:
-          status: ${{ job.status }}
-          fields: job,took
+          payload: '{"job":"https://github.com/${{ github.repository}}/actions/workflows/run-native-install.yml","status":"${{ job.status }}","release":"${{ env.OPENEDX_RELEASE }}"}'
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-          MATRIX_CONTEXT: ${{ toJson(matrix) }}
         if: always()
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        run: echo "$GITHUB_CONTEXT"
+      - name: Dump job context
+        env:
+          JOB_CONTEXT: ${{ toJSON(job) }}
+        run: echo "$JOB_CONTEXT"
+      - name: Dump steps context
+        env:
+          STEPS_CONTEXT: ${{ toJSON(steps) }}
+        run: echo "$STEPS_CONTEXT"
+      - name: Dump runner context
+        env:
+          RUNNER_CONTEXT: ${{ toJSON(runner) }}
+        run: echo "$RUNNER_CONTEXT"
+      - name: Dump strategy context
+        env:
+          STRATEGY_CONTEXT: ${{ toJSON(strategy) }}
+        run: echo "$STRATEGY_CONTEXT"
+      - name: Dump matrix context
+        env:
+          MATRIX_CONTEXT: ${{ toJSON(matrix) }}
+        run: echo "$MATRIX_CONTEXT"
