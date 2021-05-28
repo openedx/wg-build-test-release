@@ -28,6 +28,11 @@ jobs:
           sudo apt-get purge mongodb-org*
           sudo rm -r /var/log/mongodb
           sudo rm -r /var/lib/mongodb
+      - name: Clear Disk Space
+        run: |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /usr/local/lib/android
+          df -h
       - name: Ansible Bootstrap
         run: wget https://raw.githubusercontent.com/edx/configuration/$OPENEDX_RELEASE/util/install/ansible-bootstrap.sh -O - | sudo -E bash
       - name: Generate passwords
@@ -40,11 +45,14 @@ jobs:
           ls -l
       - name: Native Install
         run: wget https://raw.githubusercontent.com/edx/configuration/$OPENEDX_RELEASE/util/install/native.sh -O - | bash
-      - uses: 8398a7/action-slack@v3
+      - name: Send custom JSON data to Slack workflow
+        id: slack
+        uses: slackapi/slack-github-action@v1.14.0
         with:
-          status: ${{ job.status }}
-          fields: job,took
+          payload: '{"job":"https://github.com/${{ github.repository}}/actions/workflows/run-native-install.yml","status":"${{ job.status }}","release":"${{ env.OPENEDX_RELEASE }}"}'
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-          MATRIX_CONTEXT: ${{ toJson(matrix) }}
+        if: always()
+      - name: Disk Space
+        run: df -h
         if: always()
