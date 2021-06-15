@@ -52,7 +52,7 @@ jobs:
           payload: '{"job":"https://github.com/${{ github.repository}}/actions/workflows/run-native-install.yml","status":"${{ job.status }}","release":"${{ env.OPENEDX_RELEASE }}"}'
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        if: always()
+        if: failure()
       - name: Disk Space
         run: df -h
         if: always()
