@@ -21,7 +21,7 @@ __ https://openedx.atlassian.net/wiki/spaces/COMM/pages/1022099494/Build+-+Test+
 Role definitions and assignments
 ================================
 
-*Current release: Lilac*
+*Current release: Maple*
 
 The following roles, with corresponding expectations and assignments, are
 defined for the current release cycle.
@@ -39,7 +39,7 @@ The following applies to all roles:
 Group Chair
 ===========
 
-*Current assignee: @arbrandes*
+*Current assignee: @BbrSofiane*
 
 The group chair is responsible for coordinating efforts that culminate in
 getting a new release out and maintaining the current one.  In particular, the
@@ -57,7 +57,7 @@ Group Chair will:
 Release Manager
 ===============
 
-*Current assignees: @nedbat and @arbrandes*
+*Current assignees: @regisb*
 
 The Release Manager is responsible for the actual cutting of a release, which,
 in essence, includes following the steps in the `Process to Create an Open edX Release
@@ -87,6 +87,7 @@ necessarily have to run tests themselves, but they will:
 * Advocate for better testing tools and environments, when necessary.
 * Coordinate the reaction to test failures, such as bringing them to the
   attention of the rest of the group by opening tickets or commenting in the forum.
+* Communicate results of testing to the rest of the group.
 
 Release Documentation Expert
 ============================
@@ -109,7 +110,7 @@ document prior to a major release.  It involves:
 Bug Triager
 ===========
 
-*Current assignee: @BbrSofiane*
+*Current assignee: @arbrandes*
 
 The group's Bug Triager is, in a nutshell, responsible for proper use of
 the group's `issue board
@@ -128,11 +129,12 @@ particular, they will:
 Community Liaison
 =================
 
-*Current assignee: @arbrandes*
+*Current assignee: @DennisBates*
 
 The Build-Test-Release Community Liaison(s) will:
 
 * Assist the Group Chair in communicating the group's progress in the forum.
+* Take minutes of the BTR Biweekly Meetup and share them in the forum.
 * Periodically reply to community communication in the Build-Test-Release
   category.
 * Be on the lookout for any forum posts (not only on the
@@ -144,6 +146,16 @@ The Build-Test-Release Community Liaison(s) will:
 ===========================
 Historical role assignments
 ===========================
+
+Lilac
+===
+
+Group Chair: @arbrandes
+Release Manager: @nedbat & @arbrandes
+Release Testing Coordinator: @jfavellar90
+Release Documentation Expert: @pdpinch
+Bug Triager: @BbrSofiane
+Community Liaison: @arbrandes
 
 Koa
 ===
