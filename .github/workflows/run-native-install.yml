@@ -2,8 +2,6 @@ name: Test Native Installation
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 9 * * *"
 
 jobs:
   native_install:
