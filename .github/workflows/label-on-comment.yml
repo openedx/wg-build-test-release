@@ -9,14 +9,14 @@ on:
 jobs:
   add_label:
     runs-on: ubuntu-latest
-    if: ${{ contains(github.event.comment.body, 'label:') }}
+    if: ${{ startsWith(github.event.comment.body, 'label:') }}
     steps:
       - name: parse_label
         env:
           BODY: ${{ github.event.comment.body }}
         run: |
           # parse and put in env
-          LABEL=${BODY:7}
+          LABEL=${BODY:11}
           echo "Found label: "$LABEL
           echo 'LABEL='$LABEL >> $GITHUB_ENV
 
@@ -41,7 +41,7 @@ jobs:
 
   remove_label:
     runs-on: ubuntu-latest
-    if: ${{ contains(github.event.comment.body, 'remove label:') }}
+    if: ${{ startsWith(github.event.comment.body, 'remove label:') }}
     steps:
       - name: parse_label
         env:
