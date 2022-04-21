@@ -9,7 +9,7 @@ on:
 jobs:
   add_label:
     runs-on: ubuntu-latest
-    if: ${{ (contains(github.event.comment.body, 'label:') }}
+    if: ${{ contains(github.event.comment.body, 'label:') }}
     steps:
       - name: parse_label
         env:
