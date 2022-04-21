@@ -25,15 +25,16 @@ jobs:
         with:
           labels: ${{ env.LABEL }}
 
-      - name: Comment
+      - name: Comment on failure
+        if: ${{ failure() }}
         env:
           URL: ${{ github.event.issue.comments_url }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          COMMENT="Failed to add label: "$LABEL
           curl \
             -X POST \
             $URL \
             -H "Content-Type: application/json" \
             -H "Authorization: token $GITHUB_TOKEN" \
-            COMMENT="Added (or tried to add) label: "$LABEL \
             --data '{ "body": $COMMENT }'
