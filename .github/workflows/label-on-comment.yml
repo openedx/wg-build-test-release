@@ -1,0 +1,41 @@
+# This workflow runs when a comment is made on the ticket
+# If the comment starts with "label: " it tries to apply
+# the label indicated in rest of comment.
+
+name: Add newly created GitHub Request tickets to the tCRIL Engineering project board
+on:
+  issue_comment:
+    types: [created]
+jobs:
+  add_label:
+    runs-on: ubuntu-latest
+    if: ${{ (contains(github.event.comment.body, 'label:') }}
+    steps:
+      - name: parse_label
+        env:
+          BODY: ${{ github.event.comment.body }}
+        run: |
+          # parse and put in env
+          LABEL=${BODY:7}
+          echo "Found label: "$LABEL
+          echo 'LABEL='$LABEL >> $GITHUB_ENV
+
+      - name: apply github-request label
+        needs: [parse_label]
+        uses: actions-ecosystem/action-add-labels@v1
+        with:
+          labels: ${{ env.LABEL }}
+
+      - name: Comment
+        needs: [parse_label]
+        env:
+          URL: ${{ github.event.issue.comments_url }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          curl \
+            -X POST \
+            $URL \
+            -H "Content-Type: application/json" \
+            -H "Authorization: token $GITHUB_TOKEN" \
+            COMMENT="Added (or tried to add) label: "$LABEL \
+            --data '{ "body": $COMMENT }'
