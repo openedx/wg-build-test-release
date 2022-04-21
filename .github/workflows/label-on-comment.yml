@@ -20,7 +20,7 @@ jobs:
           echo "Found label: "$LABEL
           echo 'LABEL='$LABEL >> $GITHUB_ENV
 
-      - name: apply github-request label
+      - name: apply label
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: ${{ env.LABEL }}
@@ -38,3 +38,21 @@ jobs:
             -H "Content-Type: application/json" \
             -H "Authorization: token $GITHUB_TOKEN" \
             --data '{ "body": $COMMENT }'
+
+  remove_label:
+    runs-on: ubuntu-latest
+    if: ${{ contains(github.event.comment.body, 'remove label:') }}
+    steps:
+      - name: parse_label
+        env:
+          BODY: ${{ github.event.comment.body }}
+        run: |
+          # parse and put in env
+          LABEL=${BODY:14}
+          echo "Found label: "$LABEL
+          echo 'LABEL='$LABEL >> $GITHUB_ENV
+
+      - name: remove label
+        uses: actions-ecosystem/action-remove-labels@v1
+        with:
+          labels: ${{ env.LABEL }}
