@@ -16,7 +16,7 @@ jobs:
           BODY: ${{ github.event.comment.body }}
         run: |
           # parse and put in env
-          LABEL=${BODY:11}
+          LABEL=${BODY:7}
           echo "Found label: "$LABEL
           echo 'LABEL='$LABEL >> $GITHUB_ENV
 
