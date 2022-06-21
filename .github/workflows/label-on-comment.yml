@@ -1,4 +1,4 @@
-name: Add newly created GitHub Request tickets to the tCRIL Engineering project board
+name: Allows for the adding and removing of labels via comment 
 
 on:
   issue_comment:
