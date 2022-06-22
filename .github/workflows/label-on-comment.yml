@@ -1,4 +1,14 @@
-name: Allows for the adding and removing of labels via comment 
+# This workflow runs when a comment is made on the ticket
+# If the comment starts with "label: " it tries to apply
+# the label indicated in rest of comment.
+# If the comment starts with "remove label: ", it tries
+# to remove the indicated label.
+# Note: Labels are allowed to have spaces and this script does
+# not parse spaces (as often a space is legitimate), so the command
+# "label: really long lots of words label" will apply the
+# label "really long lots of words label"
+
+name: Allows for the adding and removing of labels via comment
 
 on:
   issue_comment:
@@ -6,8 +16,5 @@ on:
 
 jobs:
   add_label:
-    uses: openedx/.github/.github/workflows/label-on-comment.yml@master
-
-  remove_label:
     uses: openedx/.github/.github/workflows/label-on-comment.yml@master
 
