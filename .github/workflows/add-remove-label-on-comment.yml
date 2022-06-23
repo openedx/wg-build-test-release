@@ -15,6 +15,6 @@ on:
     types: [created]
 
 jobs:
-  add_label:
-    uses: openedx/.github/.github/workflows/label-on-comment.yml@master
+  add_remove_labels:
+    uses: openedx/.github/.github/workflows/add-remove-label-on-comment.yml@master
 
