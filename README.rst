@@ -1,6 +1,4 @@
-|Native Installation|
-    .. |Native Installation| image:: https://github.com/openedx/build-test-release-wg/actions/workflows/run-native-install.yml/badge.svg
-       
+     
 ################################
 Build/Test/Release Working Group
 ################################
@@ -13,6 +11,14 @@ Discussion happens in the `BTR category at discuss.openedx.org`__.
 
 __ https://discuss.openedx.org/c/working-groups/build-test-release/30
 
+Synchronous meeting takes place bi-weekly (see `Working Groups Calendar`__)
+
+__ https://calendar.google.com/calendar/u/0?cid=Y192ODZzaHJuZWdzaHNxZ3A0Zmoyazk0dTdiY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t
+
+Meeting notes and recordings are available in `BTR Meeting Minutes`__ in Confluence and
+
+__ https://openedx.atlassian.net/wiki/spaces/COMM/pages/3185508485/BTR+Meeting+Minutes
+
 More details about the working group are at the `BTR page in the wiki`__.
 
 __ https://openedx.atlassian.net/wiki/spaces/COMM/pages/1022099494/Build+-+Test+-+Release+Working+Group
@@ -21,7 +27,7 @@ __ https://openedx.atlassian.net/wiki/spaces/COMM/pages/1022099494/Build+-+Test+
 Role definitions and assignments
 ================================
 
-*Current release: Maple*
+*Current release: Nutmeg*
 
 The following roles, with corresponding expectations and assignments, are
 defined for the current release cycle.
@@ -30,9 +36,15 @@ The following applies to all roles:
 
 * Communication between assignees that is pertinent to their roles must be done
   publicly so it can be linked to, preferrably via:
-  * The [Build-Test-Release category](https://discuss.openedx.org/c/working-groups/build-test-release/30) in the forum.
-  * Github issues or PRs.
-  * The [group's Slack channel](https://openedx.slack.com/archives/C01AGTSB1LL).
+* The `Build-Test-Release category`__ in the forum.
+
+__ https://discuss.openedx.org/c/working-groups/build-test-release/30
+
+* Github issues or PRs.
+* The `group's Slack channel`__.
+
+__ https://openedx.slack.com/archives/C01AGTSB1LL
+
 * If communication is done via video or audio, it must be recorded and posted
   to one of the above.
 
@@ -66,8 +78,6 @@ in essence, includes following the steps in the `Process to Create an Open edX R
 In addition, the Release Manager will:
 
 * Create public test or release candidate branches as required by the release process.
-* Merge reviewed PRs into the release master branch (for instance,
-  ``open-release/koa.master``).
 * Notify the Release Testing Coordinator whenever additional testing is needed
   in response to the above.
 * Tag releases, major and minor, at the appropriate time.
@@ -75,7 +85,7 @@ In addition, the Release Manager will:
 Release Testing Coordinator
 ===========================
 
-*Current assignee: @jfavellar90*
+*Current assignee: @DeanJayMathew*
 
 The Release Testing Coordinator is responsible for making sure release
 candidates are tested _before_ a tag is made.  The coordinator does not
@@ -111,7 +121,7 @@ document prior to a major release.  It involves:
 Bug Triager
 ===========
 
-*Current assignee: @arbrandes*
+*Current assignee: @jfavellar90 & @NeOneSoft*
 
 The group's Bug Triager is, in a nutshell, responsible for proper use of
 the group's `issue board
@@ -146,6 +156,17 @@ The Build-Test-Release Community Liaison(s) will:
 ===========================
 Historical role assignments
 ===========================
+
+Maple
+======
+
+
+* Group Chair: @BbrSofiane
+* Release Manager: @regisb
+* Release Testing Coordinator: @jfavellar90
+* Release Documentation Expert: @pdpinch
+* Bug Triager: @arbrandes
+* Community Liaison: @DennisBates
 
 Lilac
 =====
