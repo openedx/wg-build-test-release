@@ -111,7 +111,7 @@ document prior to a major release.  It involves:
   * Reviewing commits and pull requests across Open edX repositories.
   * Collecting a summary of new features from the edX Product organization.
 * Writing a draft document and posting it for community review as a PR to
-  [edx-documentation](https://github.com/edx/edx-documentation/tree/master/en_us/open_edx_release_notes/source)
+  [edx-documentation](https://github.com/openedx/edx-documentation/tree/master/en_us/open_edx_release_notes/source)
   with sufficient lead time prior to a release.
 * Adjusting it as per the former review, and finally releasing a final version
   concomittantly with the major release itself.
