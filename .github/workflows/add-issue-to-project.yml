@@ -1,16 +1,20 @@
+name: Put new issues onto the github project board
+
 on:
   issues:
     types: opened
 
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 jobs:
-  assign_issue_to_project:
+  assign_one_project:
     runs-on: ubuntu-latest
-    name: Assign new issue to project
+    name: Assign to One Project
     steps:
-      - name: Create new project card with issue
-        id: list
-        uses: qmacro/action-add-issue-to-project-column@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          project: "Everything"
-          column: "Incoming"
+    - name: Assign NEW issues to Build Test Release Working Group Board
+      uses: srggrs/assign-one-project-github-action@1.2.1
+      if: github.event.action == 'opened'
+      with:
+        project: 'https://github.com/orgs/openedx/projects/28'
+        column_name: '💡 Incoming'
