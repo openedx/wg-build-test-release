@@ -41,6 +41,21 @@ jobs:
           echo 'STATUS_FIELD_ID='$(jq '.data.organization.projectNext.fields.nodes[] | select(.name== "Status") | .id' project_data.json) >> $GITHUB_ENV
           echo 'TODO_OPTION_ID='$(jq '.data.organization.projectNext.fields.nodes[] | select(.name== "Status") |.settings | fromjson.options[] | select(.name=="💡 Incoming") |.id' project_data.json) >> $GITHUB_ENV
 
+      - name: Add github-request labelled issue to project
+        env:
+          GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
+          ISSUE_ID: ${{ github.event.issue.node_id }}
+        run: |
+          item_id="$( gh api graphql -f query='
+            mutation($project:ID!, $issue:ID!) {
+              addProjectNextItem(input: {projectId: $project, contentId: $issue}) {
+                projectNextItem {
+                  id
+                }
+              }
+            }' -f project=$PROJECT_ID -f issue=$ISSUE_ID --jq '.data.addProjectNextItem.projectNextItem.id')"
+          echo 'ITEM_ID='$item_id >> $GITHUB_ENV
+
       - name: Move Issue to "To Do" Status
         env:
           GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
