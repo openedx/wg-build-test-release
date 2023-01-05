@@ -69,7 +69,7 @@ Group Chair will:
 Release Manager
 ===============
 
-*Current assignees: @regisb*
+*Current assignees: @mtyaka*
 
 The Release Manager is responsible for the actual cutting of a release, which,
 in essence, includes following the steps in the `Process to Create an Open edX Release
