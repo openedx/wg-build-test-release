@@ -1,7 +1,7 @@
 name: 📑 Test failure report
 description: Issue Template for Reporting Testing Failures.
 title: "[Test Case ID]: <DESCRIPTIVE TITLE>"
-labels: ["release testing"]
+labels: ["needs triage"]
 body:
   - type: markdown
     attributes:
@@ -45,15 +45,6 @@ body:
     attributes:
       label: Additional information
       description: Include any additional information that may be helpful in understanding the testing failure, such as screenshots or log files.
-  - type: dropdown
-    id: urgent
-    attributes:
-      label: Failure impact
-      description: How badly impacts the release this failure?
-      options:
-        - Low (Not a release blocker, nice to have)
-        - Medium (Needs to be fixed but not a release blocker)
-        - High (It's a release blocker)
   - type: markdown
     attributes:
       value: "The BTR team will review this issue as soon as possible. In the meantime, help us categorize this issue by adding the appropriate labels!"
