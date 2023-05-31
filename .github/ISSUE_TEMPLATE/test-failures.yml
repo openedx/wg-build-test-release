@@ -8,6 +8,14 @@ body:
       value: |
         ## Test failure report
         Describe the failure you encountered while testing a release.
+  - type: input
+    id: release
+    attributes:
+      label: Release
+      description: Include the name of the release in which the testing was performed.
+      placeholder: Ironwood
+    validations:
+      required: true
   - type: textarea
     id: expected-behavior
     attributes:
@@ -30,14 +38,6 @@ body:
       label: Steps to reproduce
       description: Provide detailed steps to reproduce the testing failure.
       placeholder:
-    validations:
-      required: true
-  - type: input
-    id: release
-    attributes:
-      label: Release
-      description: Include the name of the release in which the testing was performed.
-      placeholder: Ironwood
     validations:
       required: true
   - type: textarea
