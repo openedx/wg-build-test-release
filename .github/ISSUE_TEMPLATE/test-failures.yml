@@ -1,6 +1,6 @@
 name: 📑 Test failure report
 description: Issue Template for Reporting Testing Failures.
-title: "[Test Case ID]: <DESCRIPTIVE TITLE>"
+title: "[Test failure] <Test Case ID>: <DESCRIPTIVE TITLE>"
 labels: ["needs triage"]
 body:
   - type: markdown
