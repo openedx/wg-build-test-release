@@ -1,0 +1,50 @@
+name: 📑 Test failure report
+description: Issue Template for Reporting Testing Failures.
+title: "[Test failure] <Test Case ID>: <DESCRIPTIVE TITLE>"
+labels: ["needs triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Test failure report
+        Describe the failure you encountered while testing a release.
+  - type: input
+    id: release
+    attributes:
+      label: Release
+      description: Include the name of the release in which the testing was performed.
+      placeholder: Ironwood
+    validations:
+      required: true
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected behavior
+      description: Describe what was expected to happen during testing.
+      placeholder:
+    validations:
+      required: true
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual behavior
+      description: Describe what actually happened during testing, including any errors or failures encountered.
+      placeholder:
+    validations:
+      required: true
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Provide detailed steps to reproduce the testing failure.
+      placeholder:
+    validations:
+      required: true
+  - type: textarea
+    id: more-info
+    attributes:
+      label: Additional information
+      description: Include any additional information that may be helpful in understanding the testing failure, such as screenshots or log files.
+  - type: markdown
+    attributes:
+      value: "The BTR team will review this issue as soon as possible. In the meantime, help us categorize this issue by adding the appropriate labels!"
