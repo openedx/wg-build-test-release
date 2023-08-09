@@ -1,0 +1,17 @@
+edx-platform
+enterprise-catalog
+enterprise-access
+ecommerce
+ecommerce-worker
+edx-analytics-data-api
+edx-analytics-dashboard
+credentials
+xqueue
+tubular
+edx-notes-api
+license-manager
+course-discovery
+taxonomy-connector
+openedxstats
+blockstore
+registrar

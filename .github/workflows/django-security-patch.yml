@@ -1,0 +1,149 @@
+name: Django Security Patch Automation
+
+on:
+  schedule:
+    - cron: '0 10 10 * *'
+
+env:
+  LATEST_NAMED_RELEASE: 'Palm'
+  PACKAGE: 'Django'
+  MAJOR_PKG_VERSION: '3'
+  MINOR_PKG_VERSION: '2'
+  PKG_ECOSYSTEM: 'pip'
+
+jobs:
+  detect_and_alert_vulnerabilities:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository code
+      uses: actions/checkout@v2
+
+    - name: Setup Python environment
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+  
+    - name: Determine Advisory fetch date
+      run: |
+        current_month=$(date +"%m")
+        current_year=$(date +"%Y")
+
+        last_month=$((10#$current_month - 1))
+        if [ $last_month -eq 0 ]; then
+            last_month=12
+            current_year=$((current_year - 1))
+        fi
+
+        echo "DATE=$current_year-$(printf "%02d" $last_month)-01" >> $GITHUB_ENV
+
+    - name: Retrieve GitHub Django advisories
+      run: |
+        RESPONSE=$(curl --fail "https://api.github.com/advisories?ecosystem=${PKG_ECOSYSTEM}&affects=${PACKAGE}&type=reviewed&published=>=$DATE")
+        echo "API Response: $RESPONSE"  # Print the API response for debugging
+
+        echo "$RESPONSE" > /tmp/response.json
+
+    - name: Assess Django version vulnerability
+      id: vulnerability-check
+      run: |
+        python <<EOF
+        import json
+        import os
+        import re
+
+        # Read the saved JSON response from the previous step
+        with open('/tmp/response.json', 'r') as f:
+            response_data = f.read()
+
+        print(f"RESPONSE DATA {response_data}")
+        if not response_data or response_data == "[]":
+            print("No Django advisory found. Workflow will exit successfully.")
+            exit(0)
+
+        try:
+            data = json.loads(response_data)
+            current_version = f"{os.environ['MAJOR_PKG_VERSION']}.{os.environ['MINOR_PKG_VERSION']}"
+            latest_patched_version = None
+            advisory_description = ""
+            advisory_severity = ""
+            advisory_references = []
+
+            # Iterate through advisories
+            for advisory in data:
+                for vulnerability in advisory.get("vulnerabilities", []):
+                    vulnerable_range = vulnerability.get("vulnerable_version_range", "")
+                    match = re.match(r">= (\d+\.\d+(\.\d+)?), < (\d+\.\d+(\.\d+)?)", vulnerable_range)
+                    
+                    if match:
+                        min_version, _, max_version, _ = match.groups()
+                        
+                        # Check if current_version falls within the range
+                        if min_version <= current_version < max_version:
+                            patched_version = vulnerability.get("first_patched_version")
+
+                            if not latest_patched_version or patched_version > latest_patched_version:
+                                latest_patched_version = patched_version
+                                advisory_description = advisory.get("description", "")
+                                advisory_severity = advisory.get("severity", "")
+                                advisory_references = advisory.get("references", [])
+
+            print(f"::set-output name=latest_patched_version::{latest_patched_version}")
+            print(f"::set-output name=advisory_description::{advisory_description}")
+            print(f"::set-output name=advisory_severity::{advisory_severity}")
+            print(f"::set-output name=advisory_references::{json.dumps(advisory_references)}")
+
+        except Exception as e:
+            print(f"Error during vulnerability assessment step: {e}")
+            exit(1)
+        EOF
+
+    - name: Create issue for security patch
+      if: steps.vulnerability-check.outputs.latest_patched_version
+      uses: actions-ecosystem/action-create-issue@v1
+      with:
+        github_token: ${{ secrets.WORKFLOW_TOKEN }}
+        title: "${{ env.PACKAGE }} ${{ steps.vulnerability-check.outputs.latest_patched_version }} security patch (${{ env.LATEST_NAMED_RELEASE }})"
+        body: |
+          ## Apply latest ${{ env.PACKAGE }} security patch
+
+          **Version:** ${{ steps.vulnerability-check.outputs.latest_patched_version }}
+          **Affected Open edX named release:** ${{ env.LATEST_NAMED_RELEASE }}
+
+          ---
+
+          ### Vulnerability description
+
+          ${{ steps.vulnerability-check.outputs.advisory_description }}
+
+          ---
+
+          ### Severity
+
+          ${{ steps.vulnerability-check.outputs.advisory_severity }}
+
+          ---
+
+          ### Open edX services to upgrade
+
+          - [ ] edx-platform
+          - [ ] enterprise-catalog
+          - [ ] enterprise-access
+          - [ ] ecommerce
+          - [ ] ecommerce-worker
+          - [ ] edx-analytics-data-api
+          - [ ] edx-analytics-dashboard
+          - [ ] credentials
+          - [ ] xqueue
+          - [ ] tubular
+          - [ ] edx-notes-api
+          - [ ] license-manager
+          - [ ] course-discovery
+          - [ ] taxonomy-connector
+          - [ ] openedxstats
+          - [ ] blockstore
+          - [ ] registrar
+
+        labels: |
+          security
+
+# TODO: trigger workflows to open the PRs.
