@@ -1,5 +1,4 @@
-
-name: Allows for the adding labels when opening a test failure issue.
+name: Allows for adding labels when opening a test failure issue.
 
 on:
   issues:
@@ -8,9 +7,11 @@ on:
 jobs:
   add_label:
     runs-on: ubuntu-latest
-    if: ${{ contains(github.event.issue.title, 'Test failure') && !contains(github.event.issue.labels.*.name, 'needs triage') }}
+    if: ${{ contains(github.event.issue.title, 'Test failure') && !contains(github.event.issue.labels.*.name, 'needs triage') && !contains(github.event.issue.labels.*.name, 'release testing') }}
     steps:
-      - name: apply needs triage label
+      - name: Apply release testing labels
         uses: actions-ecosystem/action-add-labels@v1
         with:
-          labels: needs triage
+          labels: |
+            needs triage
+            release testing
