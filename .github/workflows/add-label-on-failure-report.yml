@@ -7,11 +7,15 @@ on:
 jobs:
   add_label:
     runs-on: ubuntu-latest
-    if: ${{ contains(github.event.issue.title, 'Test failure') && !contains(github.event.issue.labels.*.name, 'needs triage') && !contains(github.event.issue.labels.*.name, 'release testing') }}
+    if: ${{ contains(github.event.issue.title, 'Test failure') }}
     steps:
-      - name: Apply release testing labels
+      - if: ${{ !contains(github.event.issue.labels.*.name, 'needs triage') }}
+        name: Apply label needs triage
         uses: actions-ecosystem/action-add-labels@v1
         with:
-          labels: |
-            needs triage
-            release testing
+          labels: needs triage
+      - if: ${{ !contains(github.event.issue.labels.*.name, 'release testing') }}
+        name: Apply label release testing
+        uses: actions-ecosystem/action-add-labels@v1
+        with:
+          labels: release testing
