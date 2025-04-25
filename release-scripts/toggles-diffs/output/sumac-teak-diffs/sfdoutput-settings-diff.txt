@@ -1,0 +1,36 @@
+Added Settings
+*********************
+
+* +DISABLED_ORGS_FOR_PROGRAM_NUDGE: [lms/envs/common.py (line 5390)](https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/lms/envs/common.py#L5390)
+   * Default value = "[]"
+   * Description: List of organization codes that should be disabled
+
+* +ORA_PEER_LEASE_EXPIRATION_HOURS: [lms/envs/common.py (line 3821)](https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/lms/envs/common.py#L3821)
+   * Default value = 8
+   * Description: Amount of time before a lease on a peer submission expires
+
+* +ORA_STAFF_LEASE_EXPIRATION_HOURS: [lms/envs/common.py (line 3826)](https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/lms/envs/common.py#L3826)
+   * Default value = 8
+   * Description: Amount of time before a lease on a staff submission expires
+
+* +LIBRARY_ENABLED_BLOCKS: [cms/envs/common.py (line 2904)](https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/cms/envs/common.py#L2904)
+   * Default value = "['problem', 'video', 'html', 'drag-and-drop-v2']"
+   * Description: List of block types that are ready/enabled to be created/used
+
+Removed Settings
+*************************
+
+* -DISABLED_COUNTRIES: [lms/envs/common.py (line 5535)](https://github.com/openedx/edx-platform/blob/a63a6a6fbaec6bf1c234b9b26b66c7b50c00e336/lms/envs/common.py#L5535)
+   * Description: List of country codes that should be disabled
+
+* -WEBPACK_CONFIG_PATH: [lms/envs/common.py (line 2827)](https://github.com/openedx/edx-platform/blob/a63a6a6fbaec6bf1c234b9b26b66c7b50c00e336/lms/envs/common.py#L2827)
+   * Description: Path to the Webpack configuration file. Used by Paver scripts.
+
+* -DISABLED_COUNTRIES: [cms/envs/common.py (line 2940)](https://github.com/openedx/edx-platform/blob/a63a6a6fbaec6bf1c234b9b26b66c7b50c00e336/cms/envs/common.py#L2940)
+   * Description: List of country codes that should be disabled
+
+* -JS_ENV_EXTRA_CONFIG: [cms/envs/common.py (line 1318)](https://github.com/openedx/edx-platform/blob/a63a6a6fbaec6bf1c234b9b26b66c7b50c00e336/cms/envs/common.py#L1318)
+   * Description: JavaScript code can access this dictionary using `process.env.JS_ENV_EXTRA_CONFIG` [output truncated, see link for full description]
+
+* -WEBPACK_CONFIG_PATH: [cms/envs/common.py (line 1509)](https://github.com/openedx/edx-platform/blob/a63a6a6fbaec6bf1c234b9b26b66c7b50c00e336/cms/envs/common.py#L1509)
+   * Description: Path to the Webpack configuration file. Used by Paver scripts.
