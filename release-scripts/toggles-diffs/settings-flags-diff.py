@@ -10,8 +10,8 @@ Usage:
 3. Do steps 1 & 2 in a new virtualenv for the current release (so you'll have a new directory, `ulmo-xml`)
 4. Move the two `release-name-xml` folders to a new directory where this script lives
 5. Run the following commands in this directory (old release first, then new release):
-   * git diff --no-index teak-xml/xml/references/settings.xml ulmo-xml/xml/references/settings.xml > settings-diff.txt
-   * git diff --no-index teak-xml/xml/references/featuretoggles.xml ulmo-xml/xml/references/featuretoggles.xml > featuretoggles-diff.txt
+   * git diff --no-index teak-xml/references/settings.xml ulmo-xml/references/settings.xml > settings-diff.txt
+   * git diff --no-index teak-xml/references/featuretoggles.xml ulmo-xml/references/featuretoggles.xml > featuretoggles-diff.txt
 6. Run the following commands:
    * python3 settings-flags-diff.py settings-diff.txt
    * python3 settings-flags-diff.py featuretoggles-diff.txt

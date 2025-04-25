@@ -1,5 +1,5 @@
 """
-Generates a report of what defaults have changed for existing flags
+Generates a report of what defaults have changed for existing flags, formatted for RST
 
 Usage:
 1. Generate or download the previous release's doc build (`make xml` in the edx-platform/docs directory)
