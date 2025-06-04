@@ -153,7 +153,7 @@ Removed Feature Toggles
 * -contentstore.enable_studio_content_api: `cms/djangoapps/contentstore/toggles.py (line 214) <https://github.com/openedx/edx-platform/blob/a63a6a6fbaec6bf1c234b9b26b66c7b50c00e336/cms/djangoapps/contentstore/toggles.py#L214>`_
    * Description: Desc: Enables the new (experimental and unsafe!) Studio Content REST API for course authors,
 
-* -contentstore.new_studio_mfe.use_new_advanced_settings_page: `cms/djangoapps/contentstore/toggles.py (line 297) <https://github.com/openedx/edx-platform/blob/a63a6a6fbaec6bf1c234b9b26b66c7b50c00e336/cms/djangoapps/contentstore/toggles.py#L297>`_
+* -contentstore.new_studio_mfe.use_new_advanced_settings_page: `cms/djangoapps/contentstore/toggles.py (line 297-2) <https://github.com/openedx/edx-platform/blob/a63a6a6fbaec6bf1c234b9b26b66c7b50c00e336/cms/djangoapps/contentstore/toggles.py#L297>`_
    * Description: Desc: This flag enables the use of the new studio advanced settings page mfe
 
 * -contentstore.new_studio_mfe.use_new_certificates_page: `cms/djangoapps/contentstore/toggles.py (line 497) <https://github.com/openedx/edx-platform/blob/a63a6a6fbaec6bf1c234b9b26b66c7b50c00e336/cms/djangoapps/contentstore/toggles.py#L497>`_
