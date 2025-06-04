@@ -89,7 +89,7 @@ for line in lines:
                    hash_value = location_match.group(1)
                    location = location_match.group(2)
                    line_number = location_match.group(3)
-                   output_line = f"* {line[0]}{current_section}: [{location} (line {line_number})](https://github.com/openedx/edx-platform/blob/{hash_value}/{location}#L{line_number})\n"
+                   output_line = f"* {line[0]}{current_section}: `{location} (line {line_number}) <https://github.com/openedx/edx-platform/blob/{hash_value}/{location}#L{line_number}>`_\n"
                    # the Default value is found before the Source line
                    if default_value:
                        output_line += f"   * Default value = {default_value}\n"
