@@ -26,7 +26,7 @@ spec:
   #
   # axim-engineering help maintain this repo for the community.
   # Issues in this repo are maintained and addressed by the members of the working group.
-  owner: group:axim-engineering
+  owner: group:axim-admins
 
   # (Required) Acceptable Type Values: service, website, library, governance
   type: 'governance'
