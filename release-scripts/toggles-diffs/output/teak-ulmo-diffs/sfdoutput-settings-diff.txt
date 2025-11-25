@@ -1,0 +1,267 @@
+Added Settings
+*********************
+
+* +LEARNING_MICROFRONTEND_URL: `openedx/envs/common.py (line 1532) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/openedx/envs/common.py#L1532>`_
+   * Default value = None
+   * Description: Base URL of the micro-frontend-based courseware page.
+
+* +LOGIN_REDIRECT_WHITELIST: `openedx/envs/common.py (line 1204) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/openedx/envs/common.py#L1204>`_
+   * Default value = "empty list ([])"
+   * Description: While logout, if logout request has a redirect-url as query strings, [output truncated, see link for full description]
+
+* +MAX_FAILED_LOGIN_ATTEMPTS_ALLOWED: `openedx/envs/common.py (line 1898) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/openedx/envs/common.py#L1898>`_
+   * Default value = 6
+   * Description: Specifies the maximum failed login attempts allowed to users. Once the user reaches this [output truncated, see link for full description]
+
+* +MAX_FAILED_LOGIN_ATTEMPTS_LOCKOUT_PERIOD_SECS: `openedx/envs/common.py (line 1907) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/openedx/envs/common.py#L1907>`_
+   * Default value = "30 * 60"
+   * Description: Specifies the lockout period in seconds for consecutive failed login attempts. Once the user [output truncated, see link for full description]
+
+* +PARENTAL_CONSENT_AGE_LIMIT: `openedx/envs/common.py (line 1336) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/openedx/envs/common.py#L1336>`_
+   * Default value = 13
+   * Description: The age at which a learner no longer requires parental consent, [output truncated, see link for full description]
+
+* +PLATFORM_NAME: `openedx/envs/common.py (line 619) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/openedx/envs/common.py#L619>`_
+   * Default value = "Your Platform Name Here"
+   * Description: The display name of the platform to be used in [output truncated, see link for full description]
+
+* +PREPEND_LOCALE_PATHS: `openedx/envs/common.py (line 2327) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/openedx/envs/common.py#L2327>`_
+   * Default value = "[]"
+   * Description: A list of the paths to locale directories to load first e.g. [output truncated, see link for full description]
+
+* +REGISTRATION_EMAIL_PATTERNS_ALLOWED: `openedx/envs/common.py (line 1364) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/openedx/envs/common.py#L1364>`_
+   * Default value = None
+   * Description: Optional setting to restrict registration / account creation [output truncated, see link for full description]
+
+* +REGISTRATION_RATELIMIT: `openedx/envs/common.py (line 502) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/openedx/envs/common.py#L502>`_
+   * Default value = "60/7d"
+   * Description: New users are registered on edx via RegistrationView. [output truncated, see link for full description]
+
+* +REGISTRATION_VALIDATION_RATELIMIT: `openedx/envs/common.py (line 493) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/openedx/envs/common.py#L493>`_
+   * Default value = "30/7d"
+   * Description: Whenever a user tries to register on edx, the data entered during registration [output truncated, see link for full description]
+
+* +RETIRED_EMAIL_DOMAIN: `openedx/envs/common.py (line 2101) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/openedx/envs/common.py#L2101>`_
+   * Default value = "retired.invalid"
+   * Description: Set the domain part of hashed emails for retired users. Used by the derived [output truncated, see link for full description]
+
+* +RETIRED_EMAIL_FMT: `openedx/envs/common.py (line 2114) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/openedx/envs/common.py#L2114>`_
+   * Default value = "retired__user_{}@retired.invalid"
+   * Description: Set the format a retired user email field gets transformed into, where {} is [output truncated, see link for full description]
+
+* +RETIRED_EMAIL_PREFIX: `openedx/envs/common.py (line 2095) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/openedx/envs/common.py#L2095>`_
+   * Default value = "retired__user_"
+   * Description: Set the prefix part of hashed emails for retired users. Used by the derived [output truncated, see link for full description]
+
+* +RETIRED_USERNAME_FMT: `openedx/envs/common.py (line 2107) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/openedx/envs/common.py#L2107>`_
+   * Default value = "retired__user_{}"
+   * Description: Set the format a retired user username field gets transformed into, where {} [output truncated, see link for full description]
+
+* +RETIRED_USERNAME_PREFIX: `openedx/envs/common.py (line 2089) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/openedx/envs/common.py#L2089>`_
+   * Default value = "retired__user_"
+   * Description: Set the prefix part of hashed usernames for retired users. Used by the derived [output truncated, see link for full description]
+
+* +RETIRED_USER_SALTS: `openedx/envs/common.py (line 2121) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/openedx/envs/common.py#L2121>`_
+   * Default value = "['abc', '123']"
+   * Description: Set a list of salts used for hashing usernames and emails on users retirement.
+
+* +RETIREMENT_SERVICE_WORKER_USERNAME: `openedx/envs/common.py (line 2129) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/openedx/envs/common.py#L2129>`_
+   * Default value = "RETIREMENT_SERVICE_USER"
+   * Description: Set the username of the retirement service worker user. Retirement scripts [output truncated, see link for full description]
+
+* +RETIREMENT_STATES: `openedx/envs/common.py (line 2135) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/openedx/envs/common.py#L2135>`_
+   * Default value = "RETIREMENT_SERVICE_USER"
+   * Description: Set a list that defines the name and order of states for the retirement [output truncated, see link for full description]
+
+* +STATIC_URL_BASE: `openedx/envs/common.py (line 2315) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/openedx/envs/common.py#L2315>`_
+   * Default value = ""None""
+   * Description: The LMS and CMS use this to construct ``STATIC_URL`` by appending [output truncated, see link for full description]
+
+* +XBLOCK_EXTRA_MIXINS: `openedx/envs/common.py (line 1637) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/openedx/envs/common.py#L1637>`_
+   * Default value = "()"
+   * Description: Custom mixins that will be dynamically added to every XBlock and XBlockAside instance. [output truncated, see link for full description]
+
+* +XBLOCK_FIELD_DATA_WRAPPERS: `openedx/envs/common.py (line 1644) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/openedx/envs/common.py#L1644>`_
+   * Default value = "()"
+   * Description: Paths to wrapper methods which should be applied to every XBlock’s FieldData.
+* +XBLOCK_FIELD_DATA_WRAPPERS: `openedx/envs/common.py (line 1660) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/openedx/envs/common.py#L1660>`_
+   * Default value = "default"
+   * Description: The django cache key of the cache to use for storing anonymous user state for XBlocks.
+
+* +XBLOCK_SETTINGS: `openedx/envs/common.py (line 1652) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/openedx/envs/common.py#L1652>`_
+   * Default value = "{}"
+   * Description: Dictionary containing server-wide configuration of XBlocks on a per-type basis. [output truncated, see link for full description]
+
+* +CATALOG_MICROFRONTEND_URL: `lms/envs/common.py (line 3218) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/lms/envs/common.py#L3218>`_
+   * Default value = None
+   * Description: Base URL of the micro-frontend-based course catalog page.
+
+* +CCX_MAX_STUDENTS_ALLOWED: `lms/envs/common.py (line 2983) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/lms/envs/common.py#L2983>`_
+   * Default value = 200
+   * Description: Maximum number of students allowed in a CCX (Custom Courses for edX), This is an arbitrary [output truncated, see link for full description]
+
+* +CELERY_EXTRA_IMPORTS: `lms/envs/common.py (line 1958) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/lms/envs/common.py#L1958>`_
+   * Default value = "[]"
+   * Description: Adds extra packages that don’t get auto-imported (Example: XBlocks). [output truncated, see link for full description]
+
+* +CONTENT_FOR_SPAM_POSTS: `lms/envs/common.py (line 3228) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/lms/envs/common.py#L3228>`_
+   * Default value = """"
+   * Description: Content to replace spam posts with
+
+* +COURSE_MEMBER_API_ENROLLMENT_LIMIT: `lms/envs/common.py (line 2918) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/lms/envs/common.py#L2918>`_
+   * Default value = 1000
+   * Description: This limits the response size of the `get_course_members` API, throwing an exception [output truncated, see link for full description]
+
+* +DISABLED_ORGS_FOR_PROGRAM_NUDGE: `lms/envs/common.py (line 3502) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/lms/envs/common.py#L3502>`_
+   * Default value = "[]"
+   * Description: List of organization codes that should be disabled
+
+* +DISCUSSION_SPAM_URLS: `lms/envs/common.py (line 3223) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/lms/envs/common.py#L3223>`_
+   * Default value = "[]"
+   * Description: Urls to filter from discussion content to avoid spam
+
+* +HIBP_LOGIN_BLOCK_PASSWORD_FREQUENCY_THRESHOLD: `lms/envs/common.py (line 3291) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/lms/envs/common.py#L3291>`_
+   * Default value = 5.0
+   * Description: Log10 threshold in effect for ENABLE_AUTHN_LOGIN_BLOCK_HIBP_POLICY. [output truncated, see link for full description]
+
+* +HIBP_LOGIN_NUDGE_PASSWORD_FREQUENCY_THRESHOLD: `lms/envs/common.py (line 3267) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/lms/envs/common.py#L3267>`_
+   * Default value = 3.0
+   * Description: Log10 threshold in effect for ENABLE_AUTHN_LOGIN_NUDGE_HIBP_POLICY. [output truncated, see link for full description]
+
+* +HIBP_REGISTRATION_PASSWORD_FREQUENCY_THRESHOLD: `lms/envs/common.py (line 3252) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/lms/envs/common.py#L3252>`_
+   * Default value = 3.0
+   * Description: Log10 threshold in effect for ENABLE_AUTHN_REGISTER_HIBP_POLICY. [output truncated, see link for full description]
+
+* +LTI_CUSTOM_PARAMS: `lms/envs/common.py (line 2953) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/lms/envs/common.py#L2953>`_
+   * Default value = "[]"
+   * Description: This expands the list of optional LTI parameters that the [output truncated, see link for full description]
+
+* +PROFILE_INFORMATION_REPORT_PRIVATE_FIELDS: `lms/envs/common.py (line 2795) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/lms/envs/common.py#L2795>`_
+   * Default value = "["year_of_birth"]"
+   * Description: List of private fields that will be hidden from the profile information report.
+
+* +PYTHON_LIB_FILENAME: `lms/envs/common.py (line 1180) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/lms/envs/common.py#L1180>`_
+   * Default value = "python_lib.zip"
+   * Description: Name of the course file to make available to code in [output truncated, see link for full description]
+
+* +RECAPTCHA_PRIVATE_KEY: `lms/envs/common.py (line 3637) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/lms/envs/common.py#L3637>`_
+   * Default value = "empty string"
+   * Description: Add recaptcha private key to use captcha feature in discussion app.
+
+* +RECAPTCHA_PROJECT_ID: `lms/envs/common.py (line 3659) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/lms/envs/common.py#L3659>`_
+   * Default value = None
+   * Description: Add recaptcha project id to use captcha feature in discussion app.
+
+* +RECAPTCHA_SITE_KEYS: `lms/envs/common.py (line 3642) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/lms/envs/common.py#L3642>`_
+   * Default value = "empty dictionary"
+   * Description: Add recaptcha site keys to use captcha feature in discussion app.
+
+* +DEFAULT_ORG_LOGO_URL: `cms/envs/common.py (line 1787) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/cms/envs/common.py#L1787>`_
+   * Default value = "Derived(lambda settings: settings.STATIC_URL + 'images/logo.png')"
+   * Description: The default logo url for organizations that do not have a logo set.
+
+Removed Settings
+*************************
+
+* -CCX_MAX_STUDENTS_ALLOWED: `lms/envs/common.py (line 4522) <https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/lms/envs/common.py#L4522>`_
+   * Description: Maximum number of students allowed in a CCX (Custom Courses for edX), This is an arbitrary [output truncated, see link for full description]
+
+* -CELERY_EXTRA_IMPORTS: `lms/envs/common.py (line 2825) <https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/lms/envs/common.py#L2825>`_
+   * Description: Adds extra packages that don’t get auto-imported (Example: XBlocks). [output truncated, see link for full description]
+
+* -COURSE_MEMBER_API_ENROLLMENT_LIMIT: `lms/envs/common.py (line 4396) <https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/lms/envs/common.py#L4396>`_
+   * Description: This limits the response size of the `get_course_members` API, throwing an exception [output truncated, see link for full description]
+
+* -DISABLED_ORGS_FOR_PROGRAM_NUDGE: `lms/envs/common.py (line 5390) <https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/lms/envs/common.py#L5390>`_
+   * Description: List of organization codes that should be disabled
+
+* -LEARNING_MICROFRONTEND_URL: `lms/envs/common.py (line 5032) <https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/lms/envs/common.py#L5032>`_
+   * Description: Base URL of the micro-frontend-based courseware page.
+
+* -LOGIN_REDIRECT_WHITELIST: `lms/envs/common.py (line 3692) <https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/lms/envs/common.py#L3692>`_
+   * Description: While logout, if logout request has a redirect-url as query strings, [output truncated, see link for full description]
+
+* -MAX_FAILED_LOGIN_ATTEMPTS_ALLOWED: `lms/envs/common.py (line 3835) <https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/lms/envs/common.py#L3835>`_
+   * Description: Specifies the maximum failed login attempts allowed to users. Once the user reaches this [output truncated, see link for full description]
+
+* -MAX_FAILED_LOGIN_ATTEMPTS_LOCKOUT_PERIOD_SECS: `lms/envs/common.py (line 3844) <https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/lms/envs/common.py#L3844>`_
+   * Description: Specifies the lockout period in seconds for consecutive failed login attempts. Once the user [output truncated, see link for full description]
+
+* -PLATFORM_NAME: `lms/envs/common.py (line 76) <https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/lms/envs/common.py#L76>`_
+   * Description: The display name of the platform to be used in [output truncated, see link for full description]
+
+* -PREPEND_LOCALE_PATHS: `lms/envs/common.py (line 4594) <https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/lms/envs/common.py#L4594>`_
+   * Description: A list of the paths to locale directories to load first e.g. [output truncated, see link for full description]
+
+* -REGISTRATION_RATELIMIT: `lms/envs/common.py (line 3446) <https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/lms/envs/common.py#L3446>`_
+   * Description: New users are registered on edx via RegistrationView. [output truncated, see link for full description]
+
+* -REGISTRATION_VALIDATION_RATELIMIT: `lms/envs/common.py (line 3437) <https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/lms/envs/common.py#L3437>`_
+   * Description: Whenever a user tries to register on edx, the data entered during registration [output truncated, see link for full description]
+
+* -RETIRED_EMAIL_DOMAIN: `lms/envs/common.py (line 4924) <https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/lms/envs/common.py#L4924>`_
+   * Description: Set the domain part of hashed emails for retired users. Used by the derived [output truncated, see link for full description]
+
+* -RETIRED_EMAIL_FMT: `lms/envs/common.py (line 4935) <https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/lms/envs/common.py#L4935>`_
+   * Description: Set the format a retired user email field gets transformed into, where {} is [output truncated, see link for full description]
+
+* -RETIRED_EMAIL_PREFIX: `lms/envs/common.py (line 4919) <https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/lms/envs/common.py#L4919>`_
+   * Description: Set the prefix part of hashed emails for retired users. Used by the derived [output truncated, see link for full description]
+
+* -RETIRED_USERNAME_FMT: `lms/envs/common.py (line 4929) <https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/lms/envs/common.py#L4929>`_
+   * Description: Set the format a retired user username field gets transformed into, where {} [output truncated, see link for full description]
+
+* -RETIRED_USERNAME_PREFIX: `lms/envs/common.py (line 4913) <https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/lms/envs/common.py#L4913>`_
+   * Description: Set the prefix part of hashed usernames for retired users. Used by the derived [output truncated, see link for full description]
+
+* -RETIRED_USER_SALTS: `lms/envs/common.py (line 4941) <https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/lms/envs/common.py#L4941>`_
+   * Description: Set a list of salts used for hashing usernames and emails on users retirement.
+
+* -RETIREMENT_SERVICE_WORKER_USERNAME: `lms/envs/common.py (line 4948) <https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/lms/envs/common.py#L4948>`_
+   * Description: Set the username of the retirement service worker user. Retirement scripts [output truncated, see link for full description]
+
+* -RETIREMENT_STATES: `lms/envs/common.py (line 4954) <https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/lms/envs/common.py#L4954>`_
+   * Description: Set a list that defines the name and order of states for the retirement [output truncated, see link for full description]
+
+* -XBLOCK_EXTRA_MIXINS: `lms/envs/common.py (line 1652) <https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/lms/envs/common.py#L1652>`_
+   * Description: Custom mixins that will be dynamically added to every XBlock and XBlockAside instance. [output truncated, see link for full description]
+
+* -XBLOCK_FIELD_DATA_WRAPPERS: `lms/envs/common.py (line 1659) <https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/lms/envs/common.py#L1659>`_
+   * Description: Paths to wrapper methods which should be applied to every XBlock’s FieldData.
+* -XBLOCK_FIELD_DATA_WRAPPERS: `lms/envs/common.py (line 1675) <https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/lms/envs/common.py#L1675>`_
+   * Description: The django cache key of the cache to use for storing anonymous user state for XBlocks.
+
+* -XBLOCK_SETTINGS: `lms/envs/common.py (line 1667) <https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/lms/envs/common.py#L1667>`_
+   * Description: Dictionary containing server-wide configuration of XBlocks on a per-type basis. [output truncated, see link for full description]
+
+* -CODE_JAIL_REST_SERVICE_CONNECT_TIMEOUT: `cms/envs/common.py (line 1197) <https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/cms/envs/common.py#L1197>`_
+   * Description: Set the number of seconds CMS will wait to establish an internal [output truncated, see link for full description]
+
+* -CODE_JAIL_REST_SERVICE_HOST: `cms/envs/common.py (line 1193) <https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/cms/envs/common.py#L1193>`_
+   * Description: Set the codejail remote service host
+
+* -CODE_JAIL_REST_SERVICE_READ_TIMEOUT: `cms/envs/common.py (line 1201) <https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/cms/envs/common.py#L1201>`_
+   * Description: Set the number of seconds CMS will wait for a response from the [output truncated, see link for full description]
+
+* -CODE_JAIL_REST_SERVICE_REMOTE_EXEC: `cms/envs/common.py (line 1188) <https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/cms/envs/common.py#L1188>`_
+   * Description: Set the python package.module.function that is reponsible of [output truncated, see link for full description]
+
+* -COMPREHENSIVE_THEME_DIRS: `cms/envs/common.py (line 2178) <https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/cms/envs/common.py#L2178>`_
+   * Description: A list of paths to directories, each of which will [output truncated, see link for full description]
+
+* -COMPREHENSIVE_THEME_LOCALE_PATHS: `cms/envs/common.py (line 2186) <https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/cms/envs/common.py#L2186>`_
+   * Description: See LMS annotation. [output truncated, see link for full description]
+
+* -CUSTOM_RESOURCE_TEMPLATES_DIRECTORY: `cms/envs/common.py (line 2211) <https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/cms/envs/common.py#L2211>`_
+   * Description: Path to an existing directory of YAML files containing [output truncated, see link for full description]
+
+* -DEFAULT_SITE_THEME: `cms/envs/common.py (line 2198) <https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/cms/envs/common.py#L2198>`_
+   * Description: See LMS annotation.
+
+* -PREPEND_LOCALE_PATHS: `cms/envs/common.py (line 2192) <https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/cms/envs/common.py#L2192>`_
+   * Description: A list of the paths to locale directories to load first e.g. [output truncated, see link for full description]
+
+* -XBLOCK_EXTRA_MIXINS: `cms/envs/common.py (line 1006) <https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/cms/envs/common.py#L1006>`_
+   * Description: Custom mixins that will be dynamically added to every XBlock and XBlockAside instance. [output truncated, see link for full description]
+* -XBLOCK_EXTRA_MIXINS: `cms/envs/common.py (line 1016) <https://github.com/openedx/edx-platform/blob/b0588452088a6dd48e865f51d27e8d0e6f609bdc/cms/envs/common.py#L1016>`_
+   * Description: The django cache key of the cache to use for storing anonymous user state for XBlocks.

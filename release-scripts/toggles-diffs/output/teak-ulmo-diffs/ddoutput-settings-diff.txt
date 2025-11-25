@@ -1,0 +1,2 @@
+* MAINTENANCE_BANNER_TEXT: Changed default value! Previous: "'Sample banner message'"; Now: None
+
