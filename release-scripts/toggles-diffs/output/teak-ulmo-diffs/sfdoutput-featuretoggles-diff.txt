@@ -18,10 +18,6 @@ Added Feature Toggles
    * Default value = False
    * Description: Desc: Set to True to enable course certificates on your instance of Open edX.
 
-* +CORRECTLY_ANNOTATED_FLAG&#10;\ \ \ \ \ \ \ \ \ \ \ \ 'CORRECTLY_ANNOTATED_FLAG':\ True,&#10;&#10;\ \ \ \ \ \ \ \ \ \ \ \ 'NO_DOCUMENTATION_FLAG':\ False,&#10;&#10;\ \ \ \ \ \ \ \ \ \ \ \ #\ ..\ wrong_annotation&#10;\ \ \ \ \ \ \ \ \ \ \ \ 'WRONG_DOCUMENTATION_FLAG':\ False,&#10;\ \ \ \ \ \ \ \ }&#10;&#10;\ \ \ \ \ \ \ \ FEATURES\ =\ {\ \ #pylint:\ disable=feature-toggle-needs-doc&#10;\ \ \ \ \ \ \ \ \ \ \ \ 'SECOND_NO_DOCUMENTATION_FLAG':\ False,&#10;\ \ \ \ \ \ \ \ }: `.venv/lib/python3.11/site-packages/test/plugins/test_annotations_check.py (line 83) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/.venv/lib/python3.11/site-packages/test/plugins/test_annotations_check.py#L83>`_
-   * Default value = "Not defined"
-   * Description: Desc: NaN
-
 * +DISABLE_START_DATES: `openedx/envs/common.py (line 631) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/openedx/envs/common.py#L631>`_
    * Default value = False
    * Description: Desc: When True, all courses will be active, regardless of start [output truncated, see link for full description]
@@ -146,37 +142,6 @@ Added Feature Toggles
    * Default value = False
    * Description: Desc: Toggle platform-wide course licensing. The course.license attribute is then used to append [output truncated, see link for full description]
 
-* +MYTOGGLE&#10;\ \ \ \ #\ ..\ toggle_default:\ something: `.venv/lib/python3.11/site-packages/test/plugins/test_annotations_check.py (line 203) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/.venv/lib/python3.11/site-packages/test/plugins/test_annotations_check.py#L203>`_
-   * Default value = "Not defined"
-   * Description: Desc: NaN
-
-   * Description: MYTOGGLE [output truncated, see link for full description]
-   * Description: Default: <literal>"Not defined"</literal>
-* +MYTOGGLE&#10;\ \ \ \ #\ ..\ toggle_description:: `.venv/lib/python3.11/site-packages/test/plugins/test_annotations_check.py (line 191) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/.venv/lib/python3.11/site-packages/test/plugins/test_annotations_check.py#L191>`_
-   * Default value = "Not defined"
-   * Description: .venv/lib/python3.11/site-packages/test/plugins/test_annotations_check.py (line 191)</reference>
-   * Description: Desc: NaN
-
-* +MYTOGGLE&#10;\ \ \ \ #\ ..\ toggle_name:\ MYTOGGLE: `.venv/lib/python3.11/site-packages/test/plugins/test_annotations_check.py (line 147) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/.venv/lib/python3.11/site-packages/test/plugins/test_annotations_check.py#L147>`_
-   * Default value = "Not defined"
-   * Description: Desc: NaN
-
-* +MYTOGGLE&#10;\ \ \ \ #\ ..\ toggle_use_cases:\ open_edx: `.venv/lib/python3.11/site-packages/test/plugins/test_annotations_check.py (line 171) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/.venv/lib/python3.11/site-packages/test/plugins/test_annotations_check.py#L171>`_
-   * Default value = "Not defined"
-   * Description: Desc: NaN
-
-* +MYTOGGLE&#10;\ \ \ \ #\ ..\ toggle_use_cases:\ temporary: `.venv/lib/python3.11/site-packages/test/plugins/test_annotations_check.py (line 159) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/.venv/lib/python3.11/site-packages/test/plugins/test_annotations_check.py#L159>`_
-   * Default value = "Not defined"
-   * Description: Desc: NaN
-
-* +MYTOGGLE1&#10;\ \ \ \ waffle1\ =\ CourseWaffleFlag()&#10;\ \ \ \ #\ unannotated\ waffle\ flag&#10;\ \ \ \ waffle2\ =\ ExperimentWaffleFlag(): `.venv/lib/python3.11/site-packages/test/plugins/test_annotations_check.py (line 258) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/.venv/lib/python3.11/site-packages/test/plugins/test_annotations_check.py#L258>`_
-   * Default value = "Not defined"
-   * Description: Desc: NaN
-
-* +MYTOGGLE1&#10;\ \ \ \ waffle1\ =\ WaffleFlag('MYTOGGLE1')&#10;\ \ \ \ waffle2\ =\ WaffleFlag('MYTOGGLE2'): `.venv/lib/python3.11/site-packages/test/plugins/test_annotations_check.py (line 245) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/.venv/lib/python3.11/site-packages/test/plugins/test_annotations_check.py#L245>`_
-   * Default value = "Not defined"
-   * Description: Desc: NaN
-
 * +RBAC_IGNORE_INVALID_JWT_COOKIE: `.venv/lib/python3.11/site-packages/edx_rbac/constants.py (line 7) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/.venv/lib/python3.11/site-packages/edx_rbac/constants.py#L7>`_
    * Default value = False
    * Description: Desc: When true, causes instances of `jwt.exceptions.InvalidTokenError` [output truncated, see link for full description]
@@ -200,10 +165,6 @@ Added Feature Toggles
 * +SHOW_REGISTRATION_LINKS: `openedx/envs/common.py (line 894) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/openedx/envs/common.py#L894>`_
    * Default value = True
    * Description: Desc: Allow registration links. If this is disabled, users will no longer see buttons to the [output truncated, see link for full description]
-
-* +annotated_flag&#10;\ \ \ \ \ \ \ \ WaffleFlag(NAMESPACE,\ 'annotated_flag')&#10;&#10;\ \ \ \ \ \ \ \ #\ ..\ toggle_name:\ course_waffle_annotated_flag&#10;\ \ \ \ \ \ \ \ CourseWaffleFlag(NAMESPACE,\ 'course_waffle_annotated_flag')&#10;&#10;\ \ \ \ \ \ \ \ NotAFlag(NAMESPACE,\ NOT_A_WAFFLE_FLAG)&#10;&#10;\ \ \ \ \ \ \ \ #\ ..\ wrong_annotation&#10;\ \ \ \ \ \ \ \ WaffleFlag(NAMESPACE,\ 'flag_with_bad_annotation')\ #=A&#10;&#10;\ \ \ \ \ \ \ \ WaffleFlag(NAMESPACE,\ FLAG_WITHOUT_ANNOTATION)\ #=B&#10;&#10;\ \ \ \ \ \ \ \ DerivedWaffleFlag(NAMESPACE,\ DERIVED_FLAG_WITHOUT_ANNOTATION)\ #=C&#10;&#10;\ \ \ \ \ \ \ \ WaffleSwitch(NAMESPACE,\ SWITCH_WITHOUT_ANNOTATION)\ #=D&#10;&#10;\ \ \ \ \ \ \ \ CourseWaffleFlag(NAMESPACE,\ COURSE_WAFFLE_FLAG_WITHOUT_ANNOTATION)\ #=E&#10;&#10;\ \ \ \ \ \ \ \ MissingCourseWithKwarg\ =\ CourseWaffleFlag(\ #=F&#10;\ \ \ \ \ \ \ \ \ \ \ \ waffle_namespace=waffle_flags(),&#10;\ \ \ \ \ \ \ \ \ \ \ \ flag_name=u'missing_course_with_kwarg',&#10;\ \ \ \ \ \ \ \ ): `.venv/lib/python3.11/site-packages/test/plugins/test_annotations_check.py (line 8) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/.venv/lib/python3.11/site-packages/test/plugins/test_annotations_check.py#L8>`_
-   * Default value = "Not defined"
-   * Description: Desc: NaN
 
 * +completion.enable_completion_tracking: `.venv/lib/python3.11/site-packages/completion/waffle.py (line 11) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/.venv/lib/python3.11/site-packages/completion/waffle.py#L11>`_
    * Default value = False
@@ -284,10 +245,6 @@ Added Feature Toggles
 * +forum_v2.enable_mysql_backend: `.venv/lib/python3.11/site-packages/forum/toggles.py (line 9) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/.venv/lib/python3.11/site-packages/forum/toggles.py#L9>`_
    * Default value = False
    * Description: Desc: Waffle flag to use the MySQL backend instead of Mongo backend.
-
-* +my_toggle_name&#10;\ \ \ \ \ \ \ \ class\ CorrectlyAnnotatedConfig(ConfigurationModel):&#10;\ \ \ \ \ \ \ \ \ \ \ \ my_toggle_name\ =\ models.BooleanField(default=True)&#10;&#10;\ \ \ \ \ \ \ \ class\ DisabeldNoAnnotationsConfig(ConfigurationModel):\ \ #pylint:\ disable=feature-toggle-needs-doc&#10;\ \ \ \ \ \ \ \ \ \ \ \ my_toggle_name\ =\ models.BooleanField(default=True)&#10;&#10;\ \ \ \ \ \ \ \ #\ ..\ wrong_annotation&#10;\ \ \ \ \ \ \ \ class\ WronglyAnnotatedConfig(ConfigurationModel):\ #=A&#10;\ \ \ \ \ \ \ \ \ \ \ \ my_toggle_name\ =\ models.BooleanField(default=True)&#10;&#10;\ \ \ \ \ \ \ \ class\ NoAnnotationsConfig(ConfigurationModel):\ #=B&#10;\ \ \ \ \ \ \ \ \ \ \ \ my_toggle_name\ =\ models.BooleanField(default=True)&#10;&#10;\ \ \ \ \ \ \ \ class\ NotAConfigurationModelClass():&#10;\ \ \ \ \ \ \ \ \ \ \ \ def\ __init__(self,\ value):&#10;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ self.value\ =\ value: `.venv/lib/python3.11/site-packages/test/plugins/test_annotations_check.py (line 50) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/.venv/lib/python3.11/site-packages/test/plugins/test_annotations_check.py#L50>`_
-   * Default value = "Not defined"
-   * Description: Desc: NaN
 
 * +notifications.enable_push_notifications: `openedx/core/djangoapps/notifications/config/waffle.py (line 32) <https://github.com/openedx/edx-platform/blob/cf48323639bf24eed5ef120dfbd9e98cf0fd64af/openedx/core/djangoapps/notifications/config/waffle.py#L32>`_
    * Default value = False
